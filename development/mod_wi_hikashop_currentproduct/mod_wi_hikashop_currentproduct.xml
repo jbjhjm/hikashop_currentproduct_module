@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" method="upgrade">
+
+	<name>wi_hikashop_currentproduct</name>
+	<author><%= author %></author>
+	<creationDate><%= grunt.template.today('yyyy-mm-dd') %></creationDate>
+	<copyright>Copyright © <%= grunt.template.today('yyyy') %>, <%= author %>, All Rights Reserved.</copyright>
+	<license><%= license %></license>
+	<authorEmail><%= author %></authorEmail>
+	<authorUrl><%= author_url %></authorUrl>
+	<version><%= version %></version>
+	<description><%= descr %></description>
+
+	<files>
+		<filename module="mod_wi_hikashop_currentproduct">mod_wi_hikashop_currentproduct.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+	<params addpath="/components/com_hikashop/params">
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+
+	</params>
+	<config>
+		<fields name="params" addfieldpath="/components/com_hikashop/fields">
+			<fieldset name="basic">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field name="module_layout" type="modulelayout" extension="mod_hikashop_currentproduct" label="Layout"  />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
